@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[九宫格解锁]]></title>
+    <url>%2F2018%2F04%2F26%2F%E4%B9%9D%E5%AE%AB%E6%A0%BC%E8%A7%A3%E9%94%81%2F</url>
+    <content type="text"><![CDATA[效果 APK下载 依赖 Gradle123456allprojects &#123; repositories &#123; ... maven &#123; url &apos;https://jitpack.io&apos; &#125; &#125; &#125; 123dependencies &#123; compile &apos;com.github.mzyq:LockView:&#123;VERSION&#125;&apos; &#125; Maven123456&lt;repositories&gt; &lt;repository&gt; &lt;id&gt;jitpack.io&lt;/id&gt; &lt;url&gt;https://jitpack.io&lt;/url&gt; &lt;/repository&gt; &lt;/repositories&gt; 12345&lt;dependency&gt; &lt;groupId&gt;com.github.mzyq&lt;/groupId&gt; &lt;artifactId&gt;LockView&lt;/artifactId&gt; &lt;version&gt;&#123;VERSION&#125;&lt;/version&gt; &lt;/dependency&gt; 用法123456&lt;com.muzi.library.LockView android:id=&quot;@+id/lockView&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; app:count=&quot;3&quot; app:try_num=&quot;5&quot;/&gt; count:显示三行三列 try_num:点击5次后不可点击，调用1234567 (**必须设置默认的密码，才能生效。**)## 方法* setReset():清空当前选项，并可以点击* setPsd(List&lt;Interge&gt; psd):设置默认密码* 回调 setOnLockState(new LockView.OnLockState() { @Override public void onError() { Toast.makeText(MainActivity.this, “密码错误”, Toast.LENGTH_SHORT).show(); } @Override public void onSuccess() { Toast.makeText(MainActivity.this, &quot;密码正确&quot;, Toast.LENGTH_SHORT).show(); } @Override public void onUnable() { Toast.makeText(MainActivity.this, &quot;不可用&quot;, Toast.LENGTH_SHORT).show(); } @Override public void onPassWord(List&lt;Integer&gt; psd) { builder.setLength(0); for (Integer integer : psd) { builder.append(integer); } Toast.makeText(MainActivity.this, &quot;输入密码:&quot; + builder.toString(), Toast.LENGTH_SHORT).show(); } }); `]]></content>
+      <categories>
+        <category>自定义View</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[卫星菜单]]></title>
+    <url>%2F2018%2F04%2F26%2F%E5%8D%AB%E6%98%9F%E8%8F%9C%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[预览 下载APK 方法介绍 view)```:设置中间按钮，如果不设置会有默认的1234567891011* ```setMenuViewList(List&lt;T extends View&gt; buttonList)```:菜单按钮&gt; 必须调用，否则没有菜单功能* ```setMenuOrientation(int menuOrientation)```:设置菜单显示的方向* ```openMenu();|closeMenu();```:打开|关闭菜单* ```getMenuOrientation();```:获取当前方向 &lt;br&gt; ```isShowing();```:获取当前状态* ```setMenuClick(OnAroundMenuClick onAroundMenuClick)```:回调 public interface OnAroundMenuClick { void onCenterClick(boolean isShowing); void onMenuClick(int position); }` attrs默认中间按钮相关 menuBtnSize:默认按钮的大小 centerBtnColor:默认按钮的颜色 方向 menuOrientation | Orientatio | Value ||:———-:|:—–:|| TOP | 1 || BOTTOM | 2 || LEFT | 3 || RIGHT | 4 || LEFT_TOP | 5 ||LEFT_BOTTOM | 6 || RIGHT_TOP | 7 ||RIGHT_BOTTOM| 8 |]]></content>
+      <categories>
+        <category>自定义View</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Step1-搭建GitHub Page]]></title>
+    <url>%2F2018%2F04%2F25%2FStep1-%E6%90%AD%E5%BB%BAGitHub%20Page%2F</url>
+    <content type="text"><![CDATA[环境 下载并安装 Git 下载并安装 Nodejs 安装 Hexo1$ npm install -g hexo-cli 创建 Hexo123$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install 新建完成后，指定文件夹的目录如下：12345678.├── _config.yml├── package.json├── scaffolds├── source| ├── _drafts| └── _posts└── themes 配置 信息，您可以在此配置大部分的参数。123456789101112131415## 创建Repository&gt;请务必注意该repo的名字，必须保持格式&lt;username&gt;.github.io，其中&lt;username&gt;替换成你的github账户名。![image](http://p7rrs468p.bkt.clouddn.com/CreateRrepository.png)## 关联Github.io### 安装hexo-deployer-git[hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git) &lt;br&gt;&gt;如果不安装运行```hexo d```命令式，会出现下面的错误&lt;br&gt;### 配置_config.yml1. 打开```_config.yml 在最下面配置如下 1234deploy: type: git repository: git@github.com:mzyq/mzyq.github.io.git branch: master 或者1234deploy: type: git repo: https://github.com/mzyq/mzyq.github.io.git branch: master 发布12$ hexo clean$ hexo d -g 错误处理 安装1hexo-deployer-git Issues 方法1：更改1_config.yml 如下1234deploy: type: git repository: git@github.com:mzyq/mzyq.github.io.git branch: master 方法2：卸载git，安装最新版本]]></content>
+      <categories>
+        <category>搭建自己的GitHub Page</category>
+      </categories>
+      <tags>
+        <tag>GitHub Page</tag>
+      </tags>
+  </entry>
+</search>
